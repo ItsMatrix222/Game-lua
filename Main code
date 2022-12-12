@@ -1,0 +1,12 @@
+-- create a variable to store the player's money
+local playerMoney = 0
+
+-- create a function to handle when the player kills someone
+function onPlayerKill(victim)
+  -- increase the player's money by 5
+  playerMoney = playerMoney + 5
+end
+
+-- call the onPlayerKill function when the player kills someone
+game.Players.PlayerAdded:Connect(onPlayerKill)
+
