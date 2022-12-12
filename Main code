@@ -7,6 +7,12 @@ function onPlayerKill(victim)
   playerMoney = playerMoney + 5
 end
 
--- call the onPlayerKill function when the player kills someone
-game.Players.PlayerAdded:Connect(onPlayerKill)
+-- create a function to handle when the player dies
+function onPlayerDeath()
+  -- decrease the player's money by 3
+  playerMoney = playerMoney - 3
+end
 
+-- call the onPlayerKill and onPlayerDeath functions when the appropriate events are triggered
+game.Players.PlayerAdded:Connect(onPlayerKill)
+game.Players.PlayerRemoving:Connect(onPlayerDeath)
